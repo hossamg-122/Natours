@@ -1,0 +1,33 @@
+body {
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey-drk;
+    
+   
+  }
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    &--main {
+      display: block;
+      letter-spacing: 3rem;
+      font-weight: 400;
+      font-size: 6rem;
+      animation: moveLeft 3s ease-in-out;
+    }
+    &--sub {
+      display: block;
+      letter-spacing: 1.65rem;
+      font-size: 2rem;
+      font-weight: 400;
+      /* we add the the name of the keyframes and the duration to the animation properity */
+      animation: moveRight 3s ease-in-out;
+    }
+  }
+  .row{
+    color: $color-white;
+  }
+  /* we type the keyframes and define the styling of the animation from 0% to 100% and give it a name */

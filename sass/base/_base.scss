@@ -1,0 +1,20 @@
+@import "../abstracts/variables";
+/* Now we will add the code of global stayling instead of using normalize in the old way  */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* we use box-sizing to make all elements include padding and borders in it's height and width so we won't have 2 elements styled with the same height and width but have different sizes */
+  box-sizing: inherit;
+}
+/* now we will start adding the styles of fonts to the body to be inherited to all elements */
+html {
+    // this defines what 1rem IS
+  font-size: 62.5%;
+}
+body {
+  
+  padding: 0 4rem;
+  box-sizing: border-box;
+}

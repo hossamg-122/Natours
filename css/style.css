@@ -1,0 +1,166 @@
+/* Now we will add the code of global stayling instead of using normalize in the old way  */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* we use box-sizing to make all elements include padding and borders in it's height and width so we won't have 2 elements styled with the same height and width but have different sizes */
+  box-sizing: inherit; }
+
+/* now we will start adding the styles of fonts to the body to be inherited to all elements */
+html {
+  font-size: 62.5%; }
+
+body {
+  padding: 0 4rem;
+  box-sizing: border-box; }
+
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-5rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+body {
+  font-family: "lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    letter-spacing: 3rem;
+    font-weight: 400;
+    font-size: 6rem;
+    animation: moveLeft 3s ease-in-out; }
+  .heading-primary--sub {
+    display: block;
+    letter-spacing: 1.65rem;
+    font-size: 2rem;
+    font-weight: 400;
+    /* we add the the name of the keyframes and the duration to the animation properity */
+    animation: moveRight 3s ease-in-out; }
+
+.row {
+  color: #fff; }
+
+/* we type the keyframes and define the styling of the animation from 0% to 100% and give it a name */
+.btn:visited, .btn:link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative; }
+
+.btn--white {
+  display: inline-block;
+  color: #777;
+  background-color: #fff; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn--animated {
+  animation: moveUp 1s ease-in-out 0.5s backwards; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  transition: all ease-in-out 0.4s; }
+
+.header {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  height: 95vh;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 80%, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    /* we could define the height and the width will be defined automatically by the browser */
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* when we set top and left it measures from the left and top borders so we use trnsform to recenter the origin */
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="column-"] {
+    background-color: crimson;
+    text-align: center;
+    float: left; }
+    .row [class^="column-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .column-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .column-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .column-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .column-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .column-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .column-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
