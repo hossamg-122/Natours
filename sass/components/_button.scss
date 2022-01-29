@@ -18,6 +18,7 @@
         background-color: $color-white;
       }
     }
+    // animation fillmode backwards it means that animation of 0% percent will be applied on the element before animation starts
     &--animated {
       animation: moveUp 1s ease-in-out 0.5s backwards;
     }
