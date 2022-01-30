@@ -15,6 +15,7 @@ body {
   padding: 0 4rem;
   box-sizing: border-box; }
 
+/* we type the keyframes and define the styling of the animation from 0% to 100% and give it a name */
 @keyframes moveLeft {
   0% {
     opacity: 0;
@@ -68,10 +69,34 @@ body {
     /* we add the the name of the keyframes and the duration to the animation properity */
     animation: moveRight 3s ease-in-out; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    text-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2); }
+
 .row {
   color: #fff; }
 
-/* we type the keyframes and define the styling of the animation from 0% to 100% and give it a name */
+.u-center-text {
+  text-align: center; }
+
+.u-mb-8 {
+  margin-bottom: 8rem; }
+
+.section-about {
+  background-color: #F7F7F7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
 .btn:visited, .btn:link {
   text-transform: uppercase;
   text-decoration: none;
@@ -119,7 +144,7 @@ body {
   background-size: cover;
   background-position: top;
   height: 95vh;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
   .header__logo-box {
     position: absolute;
