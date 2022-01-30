@@ -57,7 +57,7 @@ body {
   margin-bottom: 6rem; }
   .heading-primary--main {
     display: block;
-    letter-spacing: 3rem;
+    letter-spacing: 3.5rem;
     font-weight: 400;
     font-size: 6rem;
     animation: moveLeft 3s ease-in-out; }
@@ -83,14 +83,32 @@ body {
     transform: skew(15deg, 2deg) scale(1.1);
     text-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2); }
 
+.heading-tertiary {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #777; }
+
+.paragraph {
+  font-size: 1.6rem;
+  color: #777; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
 .row {
   color: #fff; }
 
 .u-center-text {
   text-align: center; }
 
-.u-mb-8 {
+.u-mb-lg {
   margin-bottom: 8rem; }
+
+.u-mb-md {
+  margin-bottom: 4rem; }
+
+.u-mb-sm {
+  margin-bottom: 2rem; }
 
 .section-about {
   background-color: #F7F7F7;
@@ -116,17 +134,6 @@ body {
 .btn--animated {
   animation: moveUp 1s ease-in-out 0.5s backwards; }
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
-    transform: scale(1.5);
-    opacity: 0; }
-
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
 .btn::after {
   content: "";
   display: inline-block;
@@ -138,6 +145,36 @@ body {
   left: 0;
   z-index: -5;
   transition: all ease-in-out 0.4s; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  padding: .2rem .2rem;
+  border-bottom: 1px solid #55c57a;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  transform: translateY(-0.2rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+
+.btn-text:active {
+  transform: translateY(0);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
 
 .header {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -172,8 +209,7 @@ body {
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row [class^="col-"] {
-    float: left;
-    background-color: crimson; }
+    float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 5rem; }
   .row .col-1-of-2 {
@@ -188,3 +224,31 @@ body {
     width: calc( 2 * ((100% - 3 * 5rem) / 4) + 5rem); }
   .row .col-3-of-4 {
     width: calc( 3 * ((100% - 3 * 5rem) / 4) + 2 * 5rem); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    border-radius: 2rem;
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+    position: absolute;
+    outline-offset: 2rem; }
+    .composition__photo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      outline: 1.5rem solid #55c57a; }
+    .composition__photo--p1 {
+      top: -3rem;
+      left: 0;
+      transition: all .5s; }
+    .composition__photo--p2 {
+      top: 3rem;
+      left: 43%;
+      transition: all .5s; }
+    .composition__photo--p3 {
+      top: 12rem;
+      left: 16%;
+      transition: all .5s; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }

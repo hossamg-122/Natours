@@ -1,14 +1,14 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
-  background-color: lighten($color: $color-grey-drk, $amount: 50%);
+  background-color: lighten($color: $color-grey-dark, $amount: 50%);
   @include clearfix;
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
   }
   [class^="col-"] {
     float: left;
-    background-color: $color-column;
+
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
@@ -38,3 +38,4 @@
     );
   }
 }
+

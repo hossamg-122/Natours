@@ -12,7 +12,7 @@
     }
     &--white {
       display: inline-block;
-      color: $color-grey-drk;
+      color: $color-grey-dark;
       background-color: $color-white;
       &::after {
         background-color: $color-white;
@@ -21,19 +21,6 @@
     // animation fillmode backwards it means that animation of 0% percent will be applied on the element before animation starts
     &--animated {
       animation: moveUp 1s ease-in-out 0.5s backwards;
-    }
-  
-    &:hover {
-      transform: translateY(-0.3rem);
-      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-      &::after {
-        transform: scale(1.5);
-        opacity: 0;
-      }
-    }
-    &:active {
-      transform: translateY(-0.1rem);
-      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
     }
     &::after {
       content: "";
@@ -47,4 +34,40 @@
       z-index: -5;
       transition: all ease-in-out 0.4s;
     }
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      &::after {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+    &:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+    
+  }
+  .btn-text{
+    &:link,
+    &:visited{
+      font-size: $default-font-size;
+      color: $color-primary;
+      display: inline-block;
+      text-decoration: none;
+      padding: .2rem .2rem;
+      border-bottom: 1px solid  $color-primary;
+      transition: all .2s;
+    }
+    &:hover{
+      background-color:  $color-primary;
+      color:$color-white;
+     transform: translateY(-.2rem);
+     box-shadow: 0 1rem 2rem rgba($color-black,.15)
+    }
+    &:active{
+      transform: translateY(0);
+      box-shadow: 0 .5rem 1rem rgba($color-black,.15)
+    }
+    
   }
