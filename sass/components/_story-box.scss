@@ -1,0 +1,62 @@
+.story-box {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color: #000000, $alpha: 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 0.3rem;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  color: $color-grey-dark;
+  transform: skewX(-20deg);
+  backface-visibility: hidden;
+
+  & > * {
+    transform: skewX(20deg);
+    backface-visibility: hidden;
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    // we use shape properity to make text float around pic but we have to use float, width, height with it
+    shape-outside: circle(50% at 50% 50%);
+    border-radius: 50%;
+    //  clip-path: circle(50% at 50% 50%);
+
+    // we will use transform to make a clearance between shape and text as it's not recommended to use margins with float
+    // we have to add skew here as it wouldn't be applied from select all properity cause it has it's transform
+    transform: translateX(-3rem) skewX(20deg);
+    backface-visibility: hidden;
+  }
+  &__image {
+    height: 100%;
+    transform: translateX(-3.5rem) scale(1.4);
+    transition: all ease-in-out 0.5s;
+    backface-visibility: hidden;
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 1.7rem;
+    transform: translate(-50%, 50%);
+    transition: all ease-in-out 0.5s;
+    backface-visibility: hidden;
+    opacity: 0;
+    text-align: center;
+  }
+  &:hover &__image {
+    transform: translateX(-3.5rem) scale(1);
+    filter: blur(0.3rem) brightness(80%);
+  }
+  &:hover &__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}

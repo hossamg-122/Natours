@@ -25,3 +25,33 @@
   padding: 20rem 0;
   margin-top: -11rem;
 }
+.section-stories {
+  padding: 15rem 0;
+
+  position: relative;
+}
+.section-booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+.booking {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.85) 50%,
+      transparent 50%
+    ),
+    url(../../img/nat-10.jpg);
+  background-size: cover;
+  background-position: top;
+  height: 50vh;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 0.15);
+  &__form {
+    padding: 6rem;
+    width: 50%;
+  }
+}

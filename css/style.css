@@ -133,6 +133,25 @@ body {
   padding: 20rem 0;
   margin-top: -11rem; }
 
+.section-stories {
+  padding: 15rem 0;
+  position: relative; }
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.booking {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 50%, transparent 50%), url(../../img/nat-10.jpg);
+  background-size: cover;
+  background-position: top;
+  height: 50vh;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .booking__form {
+    padding: 6rem;
+    width: 50%; }
+
 .btn:visited, .btn:link {
   text-transform: uppercase;
   text-decoration: none;
@@ -311,9 +330,6 @@ body {
     width: 100%;
     height: 51rem;
     transition: all ease 1s; }
-    .card__side--front {
-      background-size: cover;
-      background-position: top; }
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back--1 {
@@ -384,3 +400,104 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+
+.story-box {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.3rem;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  color: #777;
+  transform: skewX(-20deg);
+  backface-visibility: hidden; }
+  .story-box > * {
+    transform: skewX(20deg);
+    backface-visibility: hidden; }
+  .story-box__shape {
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    border-radius: 50%;
+    transform: translateX(-3rem) skewX(20deg);
+    backface-visibility: hidden; }
+  .story-box__image {
+    height: 100%;
+    transform: translateX(-3.5rem) scale(1.4);
+    transition: all ease-in-out 0.5s;
+    backface-visibility: hidden; }
+  .story-box__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.7rem;
+    transform: translate(-50%, 50%);
+    transition: all ease-in-out 0.5s;
+    backface-visibility: hidden;
+    opacity: 0;
+    text-align: center; }
+  .story-box:hover .story-box__image {
+    transform: translateX(-3.5rem) scale(1);
+    filter: blur(0.3rem) brightness(80%); }
+  .story-box:hover .story-box__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  opacity: 0.25;
+  overflow: hidden; }
+  .bg-video__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.4rem;
+  padding: 1.5rem 2rem;
+  border: none;
+  color: #777;
+  border-radius: 0.3rem;
+  width: 90%;
+  display: block;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 3px solid transparent;
+  transition: all 0.1s; }
+  .form__input:focus {
+    outline: none;
+    border-bottom: 3px solid #55c57a;
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2); }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+
+.form__label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: block;
+  color: #777;
+  margin: 1rem 0 0 2rem;
+  transition: all .5s; }
+
+.form__input:placeholder-shown + .form__label {
+  transform: translateY(-4rem);
+  opacity: 0;
+  visibility: hidden; }

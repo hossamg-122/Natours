@@ -17,8 +17,7 @@
     height: 51rem;
     transition: all ease 1s;
     &--front {
-      background-size: cover;
-      background-position: top;
+      
     }
     &--back {
       transform: rotateY(180deg);
