@@ -99,19 +99,19 @@ body {
   color: #fff; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-mb-lg {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-mt-lg {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-mb-md {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-mb-sm {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem !important; }
 
 .section-about {
   background-color: #F7F7F7;
@@ -145,21 +145,22 @@ body {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 50%, transparent 50%), url(../../img/nat-10.jpg);
   background-size: cover;
   background-position: top;
-  height: 50vh;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
   .booking__form {
     padding: 6rem;
     width: 50%; }
 
-.btn:visited, .btn:link {
+.btn, .btn:visited, .btn:link {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 2rem;
   padding: 1.5rem 4rem;
   border-radius: 10rem;
   transition: all 0.2s;
-  position: relative; }
+  position: relative;
+  border: none;
+  cursor: pointer; }
 
 .btn--white {
   display: inline-block;
@@ -495,9 +496,89 @@ body {
   display: block;
   color: #777;
   margin: 1rem 0 0 2rem;
-  transition: all .5s; }
+  transition: all 0.5s; }
 
 .form__input:placeholder-shown + .form__label {
   transform: translateY(-4rem);
   opacity: 0;
   visibility: hidden; }
+
+.form__label-radio {
+  text-transform: capitalize;
+  color: #777;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  padding-left: 5rem; }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -0.5rem;
+  left: 0; }
+  .form__radio-button::after {
+    content: "";
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: #55c57a;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s; }
+
+.form__input-radio {
+  display: none; }
+
+.form__input-radio:checked ~ .form__label-radio .form__radio-button::after {
+  opacity: 1; }
+
+.footer {
+  background-color: #333;
+  padding: 15rem 0;
+  font-size: 1.4rem;
+  color: #F7F7F7; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    display: inline-block;
+    border-top: 1px solid #777;
+    padding-top: 2rem; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    text-decoration: none;
+    color: #F7F7F7;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: scale(1.3) rotate(5deg);
+    background-color: #333; }
+  .footer__copyright {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    width: 80%;
+    float: right; }

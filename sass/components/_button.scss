@@ -1,5 +1,6 @@
 @import "../abstracts/variables";
 .btn {
+  &,
     &:visited,
     &:link {
       text-transform: uppercase;
@@ -9,6 +10,8 @@
       border-radius: 10rem;
       transition: all 0.2s;
       position: relative;
+      border: none;
+      cursor: pointer;
     }
     &--white {
       display: inline-block;
