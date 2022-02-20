@@ -1,8 +1,52 @@
 @mixin clearfix {
-    &::after{
-        content: "";
-        display: table;
-        clear: both;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// media query manager
+
+/* 0 - 600px: phone
+ 600px - 900px : tablet portrait
+ 900px - 1200px: Tablet landscape
+ 1200 - 1800px: normal styles
+ 1800px + : Big Desktop
+ */
+/*
+breakpoint arguments choices:
+ - phone
+ - tab-port
+ - tab-land
+ - big-desktop
+
+ 1em = 16px 
+ */
+// we will use ems instead of fixed pixels to be adapted to the font size that user sets for the browser
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
     }
-    
+  }
+  @if $breakpoint == tab-port {
+    // 900px
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint==tab-land {
+    // 1200px
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint==big-desktop {
+    // 1800px
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
 }

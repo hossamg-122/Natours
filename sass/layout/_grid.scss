@@ -1,7 +1,11 @@
 .row {
   max-width: $grid-width;
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
+
   margin: 0 auto;
- // background-color: lighten($color: $color-grey-dark, $amount: 50%);
+  // background-color: lighten($color: $color-grey-dark, $amount: 50%);
   @include clearfix;
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
@@ -11,6 +15,12 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+      @include respond(tab-port) {
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
   .col-1-of-2 {
@@ -38,4 +48,3 @@
     );
   }
 }
-
