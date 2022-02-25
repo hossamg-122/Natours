@@ -6,7 +6,7 @@
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark, 0.8)
       ),
-      url(../img/hero.jpg);
+      url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     height: 95vh;
@@ -16,7 +16,15 @@
      
       clip-path: polygon(0 0, 100% 0,  100% 80vh, 0 100%);
     }
-    
+    // this is responsive images in css to display the suitable image based on resolution and width
+    @media (min-resolution:192dpi) and (min-width:37.5em),(min-width:125em) {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+    }
     &__logo-box {
       position: absolute;
       top: 4rem;
