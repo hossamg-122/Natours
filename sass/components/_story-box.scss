@@ -8,13 +8,17 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   color: $color-grey-dark;
-  transform: skewX(-20deg);
+  transform: skewX(-12deg);
   backface-visibility: hidden;
-
-  & > * {
-    transform: skewX(20deg);
-    backface-visibility: hidden;
+  @include respond(tab-land) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
   }
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -24,13 +28,24 @@
     -webkit-shape-outside: circle(50% at 50% 50%);
     // we use shape properity to make text float around pic but we have to use float, width, height with it
     shape-outside: circle(50% at 50% 50%);
-    border-radius: 50%;
-    //  clip-path: circle(50% at 50% 50%);
+    //@at-root: 50%;
+      clip-path: circle(50% at 50% 50%);
 
     // we will use transform to make a clearance between shape and text as it's not recommended to use margins with float
     // we have to add skew here as it wouldn't be applied from select all properity cause it has it's transform
-    transform: translateX(-3rem) skewX(20deg);
-    backface-visibility: hidden;
+    transform: translateX(-3rem) skewX(12deg);
+  //  backface-visibility: hidden;
+    @include respond(tab-land) {
+    }
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
+  }
+  &__text {
+    transform: skewX(12deg);
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
   &__image {
     height: 100%;
