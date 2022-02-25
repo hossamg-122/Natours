@@ -63,20 +63,24 @@
 
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- this is resolution switching to let the browser decides which is the best image to download -->
               <img
-                src="./img/nat-1-large.jpg"
-                alt="photo 1"
                 class="composition__photo composition__photo--p1"
+                srcset="./img/nat-1-large.jpg 1000w, ./img/nat-1.jpg 300w"
+                sizes="(max-width:900px) 20vw,(max-width:600px) 30vw, 300px"
+                src="./img/nat-1-large.jpg"
               />
               <img
+                class="composition__photo composition__photo--p1"
+                srcset="./img/nat-2-large.jpg 1000w, ./img/nat-2.jpg 300w"
+                sizes="(max-width:900px) 20vw,(max-width:600px) 30vw, 300px"
                 src="./img/nat-2-large.jpg"
-                alt="photo 2"
-                class="composition__photo composition__photo--p2"
               />
               <img
+                class="composition__photo composition__photo--p1"
+                srcset="./img/nat-3-large.jpg 1000w, ./img/nat-3.jpg 300w"
+                sizes="(max-width:900px) 20vw,(max-width:600px) 30vw, 300px"
                 src="./img/nat-3-large.jpg"
-                alt="photo 3"
-                class="composition__photo composition__photo--p3"
               />
             </div>
           </div>
@@ -252,7 +256,11 @@
                 I HAD THE BEST WEEK EVER WITH MY FAMILY
               </h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam,
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente
+                aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum
+                sapiente aspernatur. Aperiam, ipsum sapiente aspernatur.
+                Aperiam, ipsum sapiente aspernatur. Aperiam,
               </p>
             </div>
           </div>
@@ -272,8 +280,11 @@
                 WOW! MY LIFE IS COMPLETELY DIFFERENT NOW
               </h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam,
-
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum sapiente
+                aspernatur. Aperiam, ipsum sapiente aspernatur. Aperiam, ipsum
+                sapiente aspernatur. Aperiam, ipsum sapiente aspernatur.
+                Aperiam, ipsum sapiente aspernatur. Aperiam,
               </p>
             </div>
           </div>
@@ -352,14 +363,18 @@
         and display the image depending on the screen resolution that the browser detects automatically (density switching) by using srcset attribute
         1x uses 1pixel for every pixel in image and 2x uses 2pixels for each pixel in image which is high resolution and size and need high screen resolution to display images in such quality -->
         <picture class="footer__logo">
-          <source srcset="./img/logo-green-small-1x.png 1x , ./img/logo-green-small-2x.png 2x" media="(max-width:37.5em)" >
+          <source
+            srcset="
+              ./img/logo-green-small-1x.png 1x,
+              ./img/logo-green-small-2x.png 2x
+            "
+            media="(max-width:37.5em)"
+          />
           <img
-
-          srcset="./img/logo-green-1x.png 1x , ./img/logo-green-2x.png x2"
-          alt="natours logo"
-        />
+            srcset="./img/logo-green-1x.png 1x , ./img/logo-green-2x.png x2"
+            alt="natours logo"
+          />
         </picture>
-
       </div>
       <div class="row">
         <div class="col-1-of-2">
